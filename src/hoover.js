@@ -1,21 +1,31 @@
-var file = require('./elaborateInput.js')
-var fileData = file.data()
+var data = require('./elaborateInput').data;
 
 class Hoover {
-  constructor() {
-    this._fileData = fileData;
-    this.Xmax;
-    this.Ymax;
-    this.hoover_x;
-    this.hoover_y;
-    this.directions;
-    this.dustLocation;
-    this.currentLocation = [this.hoover_x, this.hoover_y]
+  constructor(inputData = new data()) {
+    this.positionX = inputData.hooverX;
+    this.positionY = inputData.hooverY;
+    this.currentLocation = [this.positionX, this.positionY]; // function? 
+  }
+
+  north (direction) {
+    if(direction == 'N' && this.positionX < 5) 
+    { this.positionX ++ };
+  };
+
+  south (direction) {
+    if(direction == 'S' && this.positionX > 0) 
+    { this.positionX -- };
+  };
+
+  east (direction) {
+    if(direction == 'E' && this.positionY < 5) 
+    { this.positionY ++ };
+  }
+
+  west (direction) {
+    if(direction == 'W' && this.positionY > 0) 
+    { this.positionY -- };
   }
 }
 
-Hoover.prototype.move = function() {
-  this.directions
-};
-
-
+exports.Hoover = Hoover;
