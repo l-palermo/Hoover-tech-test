@@ -1,0 +1,25 @@
+{
+  "name": "tray.io-techtest",
+  "version": "1.0.0",
+  "description": "Robotic hoover tech-test",
+  "main": "app.js",
+  "dependencies": {
+    "nyc": "^14.1.1"
+  },
+  "devDependencies": {
+    "mocha": "^6.2.0"
+  },
+  "scripts": {
+    "test": "nyc mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/l-palermo/Tray.io-TechTest.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/l-palermo/Tray.io-TechTest/issues"
+  },
+  "homepage": "https://github.com/l-palermo/Tray.io-TechTest#readme"
+}
