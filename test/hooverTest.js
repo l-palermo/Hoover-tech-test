@@ -1,10 +1,6 @@
 const assert = require('assert');
 const Hoover = require('../src/hoover').Hoover
 
-// beforeEach(() => {
-  // hoover = new Hoover()
-// });
-
 describe('#hoover()', () => {
 
   describe('#north', () => {
@@ -77,6 +73,14 @@ describe('#hoover()', () => {
       hoover.west(direction);
       assert.equal(hoover.positionY, 0);
     });
+  });
+  describe('#cleanDust', () => {
+    it('delete a dust patch on matching coordinates', () => {
+      var data = {dustLocation: ['1 2'], hooverX: 1, hooverY: 2}
+      var hoover = new Hoover(data)
+      hoover.cleanDust()
+      assert.deepEqual(hoover.dustLocation, [] )
+    })
   })
 });
 
