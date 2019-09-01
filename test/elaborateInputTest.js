@@ -22,6 +22,6 @@ describe('#data() returns:', function() {
   });
 
   it('dust patch locations', function() {
-    assert.deepEqual(data.dustLocation, [ '1 0', '2 2', '2 3' ])
+    assert.deepEqual(data.patchLocation, [ '1 0', '2 2', '2 3' ])
   })
 });

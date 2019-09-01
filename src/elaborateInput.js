@@ -7,7 +7,7 @@ function data(input = new file()) {
   this.hooverX;
   this.hooverY;
   this.directions;
-  this.dustLocation;
+  this.patchLocation;
   this.run();
 }
 
@@ -33,7 +33,7 @@ data.prototype = {
     this._roomDimension();
     this._hooverLocation();
     this._directions();
-    this.dustLocation = this._data;
+    this.patchLocation = this._data;
   }
 }
 

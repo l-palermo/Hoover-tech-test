@@ -5,18 +5,27 @@ class Hoover {
     this.positionX = inputData.hooverX;
     this.positionY = inputData.hooverY;
     this.directions = inputData.directions;
-    this.dustLocation = inputData.dustLocation;
-    this.currentLocation = [this.positionX + ' ' + this.positionY]; // function? 
+    this.patchLocation = inputData.patchLocation;
+    this.patchNumber = 0
+    this.currentLocation; 
   }
 
-  cleanDust () {
-    for(var i = 0; i < this.dustLocation.length; i++) {
-      if(this.dustLocation[i] == this.currentLocation[0]) {
-        this.dustLocation.splice(i,1);
-        //method to count the eaten dust patches
-      }
-    }
-  }
+  cleanPatch () {
+    for(var i = 0; i < this.patchLocation.length; i++) {
+      if(this.patchLocation[i] == this.currentLocation) {
+        this.patchLocation.splice(i,1);
+        this.cleanedPatchNumber()
+      };
+    };
+  };
+
+  cleanedPatchNumber () {
+    this.patchNumber ++;
+  };
+
+  currentLocation () {
+    this.currentLocation = this.positionX + ' ' + this.positionY;
+  };
 
   north (direction) {
     if(direction == 'N' && this.positionX < 5) 
