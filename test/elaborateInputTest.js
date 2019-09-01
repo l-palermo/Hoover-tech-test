@@ -2,12 +2,11 @@ var assert = require('assert');
 var fileData = require('../src/elaborateInput').data
 var readFile = require('../src/inputData')
 var fileMock = './test/mock/inputFileMock.txt'
-var inputMock = readFile.input(fileMock)
 
-
-describe('#data() returns:', function() {
+describe('#data returns:', function() {
 
   beforeEach(() => {
+    var inputMock = readFile.input(fileMock)
     data = new fileData(inputMock)
   });
 

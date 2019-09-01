@@ -2,7 +2,7 @@ const assert = require('assert');
 const sinon = require('sinon');
 const Hoover = require('../src/hoover').Hoover;
 
-describe('#hoover()', () => {
+describe('#hoover', () => {
   
   describe('#north', () => {
     it('change the hoover Y coordinate by +1 when N', () => {
