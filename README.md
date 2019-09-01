@@ -13,7 +13,7 @@ After the robot elaborate the given information, moves around the room as per di
 -----------------
 ## Instruction
 To run the program, create a new folder on your local machine open your text editor and create a new folder then run the following commands:
-* `>$ git clone git@github.com:l-palermo/TechTest.git`<br>Clone this repository typing on your terminal
+* `>$ git clone git@github.com:l-palermo/tech-test.git`<br>Clone this repository typing on your terminal
 * `>$ npm install`<br>Install the dependencies
 * `>$ npm test`<br>Run test and coverage(100%)
 -----------------
