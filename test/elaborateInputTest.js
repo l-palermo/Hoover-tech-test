@@ -3,10 +3,14 @@ var fileData = require('../src/elaborateInput').data
 var readFile = require('../src/inputData')
 var fileMock = './test/mock/inputFileMock.txt'
 var inputMock = readFile.input(fileMock)
-var data = new fileData(inputMock)
 
 
 describe('#data() returns:', function() {
+
+  beforeEach(() => {
+    data = new fileData(inputMock)
+  });
+
   it('maximum rooms coordinates', function() {
     assert.equal(data.Xmax, 5);
     assert.equal(data.Ymax, 5);

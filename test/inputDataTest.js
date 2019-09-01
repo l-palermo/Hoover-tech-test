@@ -6,6 +6,5 @@ describe('#input() returns:', function() {
     var fileMock = './test/mock/inputFileMock.txt'
     var fileData = readFile.input(fileMock)
     assert.deepEqual(fileData, [ '5 5', '1 2', '1 0', '2 2', '2 3', 'NNESEESWNWW' ])
-
   });
 });

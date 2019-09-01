@@ -9,10 +9,9 @@ class Hoover {
     this.directions = inputData.directions;
     this.patchLocation = inputData.patchLocation;
     this.patchNumber = 0;
-    // this.currentLocation; // ?
   };
 
-  start () {
+  move () {
     this.directions.forEach((direction) => {
       this.north(direction);
       this.south(direction);
@@ -20,16 +19,7 @@ class Hoover {
       this.west(direction);
       this.cleanPatch();
     })
-    this.stdOut();
   };
-
-  outputFormat () {
-    return this.currentLocation()+'\n'+this.patchNumber
-  };
-
-  stdOut () {
-    console.log(this.outputFormat())
-  }
 
   cleanPatch () {
     for(var i = 0; i < this.patchLocation.length; i++) {
@@ -69,6 +59,3 @@ class Hoover {
   };
 };
 exports.Hoover = Hoover;
-
-var hoover = new Hoover();
-hoover.start()

@@ -3,7 +3,7 @@ const sinon = require('sinon');
 const Hoover = require('../src/hoover').Hoover;
 
 describe('#hoover()', () => {
-
+  
   describe('#north', () => {
     it('change the hoover Y coordinate by +1 when N', () => {
       var data = { hooverY: 1, Ymax: 5 };
@@ -76,7 +76,6 @@ describe('#hoover()', () => {
     it('delete a dust patch on matching coordinates', () => {
       var data = { patchLocation: ['1 2'], hooverX: 1, hooverY: 2 };
       var hoover = new Hoover(data);
-      // hoover.currentLocation();
       hoover.cleanPatch();
       assert.deepEqual(hoover.patchLocation, [] )
     });
@@ -86,7 +85,6 @@ describe('#hoover()', () => {
     it('returns the hoover current location', () => {
       var data = { hooverX: 1, hooverY: 2 };
       var hoover = new Hoover(data);
-      // hoover.currentLocation(); // ?
       assert.equal(hoover.currentLocation(), '1 2')
     })
   })
@@ -95,7 +93,6 @@ describe('#hoover()', () => {
     it('counts the number of cleaned patch', () => {
       var data = { patchLocation: ['1 2'], hooverX: 1, hooverY: 2 };
       var hoover = new Hoover(data);
-      // hoover.currentLocation();
       hoover.cleanPatch();
       assert.equal(hoover.patchNumber, 1)
     });
@@ -106,19 +103,9 @@ describe('#hoover()', () => {
       var data = { patchLocation: ['1 2'], hooverX: 0, hooverY: 0, directions: ['N', 'E', 'E'], Xmax: 5, Ymax: 5 };
       var hoover = new Hoover(data);
       var consoleLogStub = sinon.stub(console, 'log')
-      hoover.start()
+      hoover.move()
       consoleLogStub.restore()
-      assert.equal(hoover.currentLocation(), '1 2')
-    })
-  })
-
-  describe('#stdOut', () => {
-    it('prints the output on the teraminal', () => {
-      var data = { hooverX: 0, hooverY: 0 };
-      var consoleLogStub = sinon.stub(console, 'log')
-      var hoover = new Hoover(data);
-      hoover.stdOut()
-      assert.equal(console.log.calledWith('0 0\n0'), true)
+      assert.equal(hoover.currentLocation(), '2 1')
     })
   })
 });

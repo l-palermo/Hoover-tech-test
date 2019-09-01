@@ -18,7 +18,7 @@ data.prototype = {
     this.Xmax = room[0];
     this.Ymax = room[2];
   },
-
+  
   _hooverLocation: function() {
     var hooverLocation = this._data.splice(0, 1).join();
     this.hooverX = hooverLocation[0];
