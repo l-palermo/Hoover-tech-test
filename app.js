@@ -1,22 +1,10 @@
-const hooverClass = require('./src/hoover').Hoover
+const { Hoover } = require('./src/hoover');
+const { output } = require('./src/inputOutput');
 
-function app(Hoover = new hooverClass()) {
-  this.hoover = Hoover;
+function app(hooverInstance = new Hoover(), Output = output) {
+  const hoover = hooverInstance;
+  hoover.move();
+  Output(hoover.currentLocation(), hoover.patchNumber);
 }
 
-app.prototype = {
-  start: function() { 
-    this.hoover.move();
-    this.stdOut();
-  },
-  outputFormat: function() {
-    return this.hoover.currentLocation()+'\n'+this.hoover.patchNumber
-  },
-  stdOut: function() {
-    console.log(this.outputFormat())
-  }
-}
-exports.app = app;
-
-var application = new app();
-module.exports.application = application
+module.exports.app = app;
