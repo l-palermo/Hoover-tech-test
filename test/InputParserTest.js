@@ -1,14 +1,10 @@
 const assert = require('assert');
 const { InputParser } = require('../src/InputParser');
-const readFile = require('../src/inputOutput');
-
-const fileMock = './test/mock/inputFileMock.txt';
 
 describe('#data returns:', () => {
   let data;
-  let inputMock;
-  beforeEach(() => {
-    inputMock = readFile.input(fileMock);
+  const inputMock = ['5 5', '1 2', '1 0', '2 2', '2 3', 'NNESEESWNWW'];
+  before(() => {
     data = new InputParser(inputMock);
   });
 

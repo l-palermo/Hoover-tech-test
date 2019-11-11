@@ -1,6 +1,4 @@
-const File = require('./inputOutput').input;
-
-function InputParser(input = new File()) {
+function InputParser(input) {
   this.data = input;
   this.Xmax = null;
   this.Ymax = null;
@@ -15,14 +13,14 @@ InputParser.prototype = {
 
   roomDimension() {
     const room = this.data.splice(0, 1).join();
-    this.Xmax = room[0];
-    this.Ymax = room[2];
+    this.Xmax = Number(room[0]);
+    this.Ymax = Number(room[2]);
   },
 
   hooverLocation() {
     const hooverLocation = this.data.splice(0, 1).join();
-    this.hooverX = hooverLocation[0];
-    this.hooverY = hooverLocation[2];
+    this.hooverX = Number(hooverLocation[0]);
+    this.hooverY = Number(hooverLocation[2]);
   },
 
   actions() {

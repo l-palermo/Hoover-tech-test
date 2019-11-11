@@ -1,7 +1,5 @@
-const Data = require('./InputParser').inputParser;
-
 class Hoover {
-  constructor(inputData = new Data()) {
+  constructor(inputData) {
     this.Xmax = inputData.Xmax;
     this.Ymax = inputData.Ymax;
     this.positionX = inputData.hooverX;
