@@ -22,8 +22,8 @@ To run the program, create a new folder on your local machine open your text edi
 The program runs via the `app.js` file that works as a controller for the other source files.
 Run the following commands:
 * `>$ node`<br>Starts the REPL
-* `> var app = require('./app.js').application`<br>Requires an instance of the function `app` so you do not need to instantiate it
-* `> app.start()`<br>Activate the robotic hoover that will begin its journey through the room and automatically returns the output as required:
+* `> var run = require('./app.js')`<br>Requires the modules app to make it available on the REPL.
+* `> run.app()`<br>Start the robotic hoover that will begin its journey through the room and automatically returns the output as required:
    - First line: hoover's current location
    - Second line: number of the patches of dirt cleaned up
 -----------------
@@ -35,7 +35,21 @@ Run the following commands:
 -----------------
 ## Approach
 
-I have decided to code this app to run on the terminal, because front the requirement there is no large user interaction and the app computes the output directly from readin the file.
-I have decide to use ES6 features except for the export/import modules to allow the app to run on the terminal.
-At first I have parsed the input.txt file  
+The app is composed by 2 classes **Hoover** and **InputParser** and 3 modules **input**, **vacuum**, **output** and *app*.
+- **input** - It parses the input.txt file to an array of strings.
+- **InputParser** - It splits the parsed input and save each line in a specif state for the **Hoover** to operate its actions.
+- **Hoover** -  It has the responsibility of moving around the room using the coordinates and information passed by the **InputParser**
+- **vacuum** - 
+- **output** - It takes the computed states of the **Hoover** and formats them as required.
+- **app** - it is a runner function that connects the above modules an classes to perform the application objective.
+
+To create this app I have focused on the principles of single responsibilities making sure that each module and class has only one responsibility and perform only related actions.
+This approach makes the app more maintanable and implementable.
+
+
+## Consideration
+
+I have decided to code this app to run on the terminal because front the requirement there is no large user interaction and the app computes the output directly from reading the file.
+I have decided to use ES6 features except for the export/import modules to allow the app to run on the terminal.
+All modules and classes are injected in the **app()** functions so developers can easily understand the hierarchy among them. To mock these dependencies I have to define default arguments for the app function and I am not sure if is the best approach. I would like to explore other architecture solutions to improve this aspect of the app or improve the testing strategy.
 
