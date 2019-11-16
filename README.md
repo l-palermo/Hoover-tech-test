@@ -33,4 +33,9 @@ Run the following commands:
 * `NYC`<br>Test coverage
 * `Sinon`<br>Standalone test spies, stubs and mocks
 -----------------
+## Approach
+
+I have decided to code this app to run on the terminal, because front the requirement there is no large user interaction and the app computes the output directly from readin the file.
+I have decide to use ES6 features except for the export/import modules to allow the app to run on the terminal.
+At first I have parsed the input.txt file  
 

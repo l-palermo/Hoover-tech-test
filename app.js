@@ -1,6 +1,6 @@
 const { InputParser } = require('./src/InputParser');
 const { Hoover } = require('./src/hoover');
-const { input, output } = require('./src/inputOutput');
+const { input, output } = require('./src/input');
 
 function app(Input = input, Parser = InputParser, HooverObj = Hoover, Output = output) {
   const fileData = Input();
