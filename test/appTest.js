@@ -10,10 +10,10 @@ describe('#app', () => {
     const hoover = function hoover() {
       this.move = () => {};
       this.currentLocation = () => {};
-      this.patchNumber = 0;
     };
+    const vacuum = function vacuum() { this.patchCounter = 0; };
     const output = () => { console.log('0 0\n0'); };
-    app(input, inputParser, hoover, output);
+    app(input, inputParser, hoover, output, vacuum);
     assert.equal(console.log.calledWith('0 0\n0'), true);
     consoleLogStub.restore();
   });

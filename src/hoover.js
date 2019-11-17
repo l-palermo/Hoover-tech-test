@@ -1,12 +1,12 @@
 class Hoover {
-  constructor(inputData) {
+  constructor(inputData, vacuum) {
     this.Xmax = inputData.Xmax;
     this.Ymax = inputData.Ymax;
     this.positionX = inputData.hooverX;
     this.positionY = inputData.hooverY;
     this.directions = inputData.directions;
     this.patchLocation = inputData.patchLocation;
-    this.patchNumber = 0;
+    this.vacuum = vacuum;
   }
 
   move() {
@@ -15,21 +15,8 @@ class Hoover {
       this.south(direction);
       this.east(direction);
       this.west(direction);
-      this.cleanPatch();
+      this.vacuum.getPatch(this.patchLocation, this.currentLocation());
     });
-  }
-
-  cleanPatch() {
-    for (let i = 0; i < this.patchLocation.length; i += 1) {
-      if (this.patchLocation[i] === this.currentLocation()) {
-        this.patchLocation.splice(i, 1);
-        this.cleanedPatchCounter();
-      }
-    }
-  }
-
-  cleanedPatchCounter() {
-    this.patchNumber += 1;
   }
 
   currentLocation() {
