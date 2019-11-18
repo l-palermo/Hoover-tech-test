@@ -35,13 +35,13 @@ Run the following commands:
 -----------------
 ## Approach
 
-The app is composed by 2 classes **Hoover** and **InputParser** and 3 modules **input**, **vacuum**, **output** and *app*.
-- **input** - It parses the input.txt file to an array of strings.
-- **InputParser** - It splits the parsed input and save each line in a specif state for the **Hoover** to operate its actions.
-- **Hoover** -  It has the responsibility of moving around the room using the coordinates and information passed by the **InputParser**
-- **vacuum** - It run trough the patch locations and compares each of them with the **Hoover** current location. Keep count of the patch that has been cleaned.
-- **output** - It takes the computed states of the **Hoover** and formats them as required.
-- **app** - It is a runner function that connects the above modules an classes to perform the application objective.
+The app is composed by 2 classes **Hoover** and **InputParser** and 3 modules **input**, **Vacuum**, **output** and *app*.
+- `**input**` - It parses the input.txt file to an array of strings.
+- `**InputParser**` - It splits the parsed input and save each line in a specif state for the **Hoover** to operate its actions.
+- `**Hoover**` -  It has the responsibility of moving around the room using the coordinates and information passed by the InputParser
+- `**Vacuum**` - It run trough the patch locations and compares each of them with the **Hoover** current location. Keep count of the patch that has been cleaned.
+- `**output**` - It takes the computed states of the **Hoover** and formats them as required.
+- `**app**` - It is a runner function that connects the above modules an classes to perform the application objective.
 
 To create this app I have focused on the principles of single responsibilities making sure that each module and class has only one responsibility and perform only related actions.
 This approach makes the app more maintanable and implementable.
@@ -49,8 +49,7 @@ This approach makes the app more maintanable and implementable.
 
 ## Consideration
 
-I have decided to code this app so it can run on the terminal.
-This is because from the requirement there is no large user interaction and the app computes the output directly from reading the file.
+I have decided to code this app so it can run on the terminal because, from the requirements, there is no large user interaction, the program computes the data directly and returns the required output.
 I have decided to use ES6 features except for the export/import modules that are still not fully supported in Node.js.
-All modules and classes are injected in the **app()** functions so developers can easily understand the hierarchy among them. To mock these dependencies I have to define default paramenters for the **app()** function and I am not sure this is the best approach. I would like to explore other architecture solutions to improve this aspect of the app or improve the testing strategy.
+All modules and classes are injected in the **app()** functions so developers can easily understand the hierarchy among them. To mock these dependencies I defined default paramenters for the **app()** function but I am not sure this is the best approach. I would like to explore other architecture solutions to improve this aspect of the app or improve the testing strategy.
 
