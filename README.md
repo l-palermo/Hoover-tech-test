@@ -49,7 +49,9 @@ This approach makes the app more maintanable and implementable.
 
 ## Consideration
 
-I have decided to code this app so it can run on the terminal because, from the requirements, there is no large user interaction, the program computes the data directly and returns the required output.
-I have decided to use ES6 features except for the export/import modules that are still not fully supported in Node.js.
-All modules and classes are injected in the **app()** functions so developers can easily understand the hierarchy among them. To mock these dependencies I defined default paramenters for the **app()** function but I am not sure this is the best approach. I would like to explore other architecture solutions to improve this aspect of the app or improve the testing strategy.
+From the requirements, there is no large user interaction because once the program is initialized performs all the actions automatically so I have decided to code this app to run on the terminal.
+I used ES6 features except for the export/import modules that are still not fully supported in Node.js.
+All modules and classes are injected in the **app()** functions so developers can easily understand the hierarchy among them. To mock these dependencies I defined default parameters for the **app()** function but I am not sure this is the best approach. I would like to explore other architecture solutions to improve this aspect of the app or improve the testing strategy.
 
+Using correct encapsulation in JavaScript is not as straight forward as in other OOP languages. The properties in the constructor are visible, accessible and modifiable. The use of getter and setter doesn't change the situation, the data is not secure.
+One way to at least securing the data would be defining the data as variables and bind to this only methods calls passing the properties to them from the constructor. The code would result harder to read but the data would be secure and just the method calls would be accessible.
