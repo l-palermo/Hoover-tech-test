@@ -47,7 +47,7 @@ To create this app I have focused on the principles of single responsibilities m
 This approach makes the app more maintanable and implementable.
 
 
-## Consideration
+## Considerations
 
 From the requirements, there is no large user interaction because once the program is initialized performs all the actions automatically so I have decided to code this app to run on the terminal.
 I used ES6 features except for the export/import modules that are still not fully supported in Node.js.
