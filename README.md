@@ -1,4 +1,4 @@
-# TechTest
+# Hoover TechTest
 -----------------
 ## Description
 This technical test consists of a program that drives an imaginary robotic hoover in an imaginary room described by X, Y coordinates. The robot receives instruction from an input.txt file that includes:
